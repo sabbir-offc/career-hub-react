@@ -1,4 +1,26 @@
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
+  const links = (
+    <>
+      <li>
+        <NavLink to="/statistics">Statistics</NavLink>
+      </li>
+      <li>
+        <NavLink to="/applied-jobs">Applied Jobs</NavLink>
+      </li>
+      <li>
+        <NavLink to="/blogs">Blog</NavLink>
+      </li>
+    </>
+  );
+  const img = (
+    <>
+      <NavLink to="/">
+        <img className="" src="assets/logo/CareerHub.png" />
+      </NavLink>
+    </>
+  );
   return (
     <nav>
       <div className="navbar bg-base-100">
@@ -24,52 +46,21 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              {links}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          {img}
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
+          <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <button
+            className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
+            id="special-btn"
+          >
+            Star Applying
+          </button>
         </div>
       </div>
     </nav>

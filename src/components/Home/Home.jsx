@@ -1,7 +1,13 @@
+import Banner from "../UIPages/Banner/Banner";
+import CategoryList from "../UIPages/CategroyList/CategoryList";
+import FeaturedJobs from "../UIPages/FeaturdeJobs/FeaturedJobs";
+import "./Home.css";
 const Home = () => {
   return (
     <div>
-      <h3 className="text-3xl">This is home.</h3>
+      <Banner></Banner>
+      <CategoryList></CategoryList>
+      <FeaturedJobs></FeaturedJobs>
     </div>
   );
 };
