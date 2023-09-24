@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { CiLocationOn } from "react-icons/ci";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import "/src/common.css";
+import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
@@ -12,6 +13,7 @@ const Job = ({ job }) => {
     salary,
     job_type,
     location,
+    id,
   } = job;
   return (
     <div>
@@ -35,12 +37,14 @@ const Job = ({ job }) => {
               {salary}
             </p>
           </div>
-          <button
-            id="special-btn"
-            className="btn btn-primary text-white font-bold"
-          >
-            View Details
-          </button>
+          <Link to={`/job/${id}`}>
+            <button
+              id="special-btn"
+              className="px-5 py-3 rounded-lg text-white font-bold text-xl mt-8"
+            >
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

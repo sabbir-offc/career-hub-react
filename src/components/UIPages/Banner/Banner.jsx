@@ -11,7 +11,7 @@ const Banner = () => {
           from start to finish.
         </p>
         <button
-          className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl mt-8"
+          className="px-7 py-5 rounded-lg text-white font-bold text-xl mt-8"
           id="special-btn"
         >
           Get Start

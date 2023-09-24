@@ -8,6 +8,12 @@ export default {
     daisyui: {
       themes: ["light", "dark", "cupcake"],
     },
+    extend: {
+      backgroundImage: {
+        'jobs-bg': "url('/public/assets/images/bg2.png')",
+      }
+    }
+
   },
   plugins: [require("daisyui")],
 }
