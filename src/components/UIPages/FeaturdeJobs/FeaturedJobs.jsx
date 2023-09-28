@@ -25,11 +25,11 @@ const FeaturedJobs = () => {
           <Job key={job.id} job={job}></Job>
         ))}
       </div>
-      <div className={datalength === jobs.length && "hidden"}>
+      <div className={datalength === jobs.length ? "hidden" : "text-center"}>
         <button
           onClick={() => setDataLength(jobs.length)}
           id="special-btn"
-          className="px-5 py-3 rounded-lg text-white font-bold text-xl mt-8"
+          className="px-5 py-3 rounded-lg text-white font-bold mx-auto text-xl mt-8"
         >
           Show All Jobs
         </button>
