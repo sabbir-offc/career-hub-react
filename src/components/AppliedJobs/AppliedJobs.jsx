@@ -1,13 +1,16 @@
 import { useEffect } from "react";
-// import { useLoaderData } from "react-router-dom";
-// import { getStoredJobApplication } from "../../Utility/LocalStorage";
+import { useLoaderData } from "react-router-dom";
+import { getStoredJobApplication } from "../../Utility/LocalStorage";
 
-const AppliedJobs = () => {
-  // const jobs = useLoaderData();
+function AppliedJobs() {
+  const jobs = useLoaderData();
   useEffect(() => {
-    // const storedJobsId = getStoredJobApplication();
+    const storedJobsId = getStoredJobApplication();
+    if (jobs.length > 0) {
+      const jobsApplied = jobs.filter();
+    }
   }, []);
   return <div>Jobs</div>;
-};
+}
 
 export default AppliedJobs;

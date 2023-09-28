@@ -1,10 +1,10 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+
 import { AiOutlineDollar, AiOutlineMail } from "react-icons/ai";
 import { HiOutlinePhone } from "react-icons/hi2";
 import { CiLocationOn } from "react-icons/ci";
 import "react-toastify/dist/ReactToastify.css";
-import { saveJobApplication } from "../../Utility/LocalStorage";
+import { getStoredJobApplication } from "../../Utility/LocalStorage";
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
@@ -12,17 +12,7 @@ const JobDetails = () => {
   const job = jobs.find((job) => job.id === parseInt(id));
 
   const handleApplyJob = () => {
-    saveJobApplication(id);
-    return toast.success("Job Applied Succesfully.", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+    getStoredJobApplication(job);
   };
   return (
     <div>
@@ -128,7 +118,6 @@ const JobDetails = () => {
           </button>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };
