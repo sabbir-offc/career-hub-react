@@ -1,6 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success("Log out Successfully.");
+      })
+      .catch(() => {
+        toast.error("Log out failed");
+      });
+  };
   const links = (
     <>
       <li>
@@ -55,12 +68,25 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button
-            className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
-            id="special-btn"
-          >
-            Star Applying
-          </button>
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
+              id="special-btn"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
+                id="special-btn"
+              >
+                Star Applying
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>
