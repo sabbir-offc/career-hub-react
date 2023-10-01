@@ -21,11 +21,21 @@ const Register = () => {
     createUser(email, password)
       // eslint-disable-next-line no-unused-vars
       .then((res) => {
-        toast.success("Registration Successfull.");
+        // Create and append an <img> element to display the image
+        const imgElement = document.createElement("img");
+        imgElement.src = image;
+        imgElement.alt = "User Profile Image";
+
+        // Append the <img> element to your website's DOM
+        const imageContainer = document.getElementById("image-container"); // Replace "image-container" with the actual ID or selector of the element where you want to display the image.
+        if (imageContainer) {
+          imageContainer.appendChild(imgElement);
+        }
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: image,
         });
+        toast.success("Registration Successfull.");
         navigate("/");
       })
       .catch((err) => {

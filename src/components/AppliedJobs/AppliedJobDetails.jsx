@@ -15,7 +15,7 @@ const AppliedJobDetails = ({ job }) => {
   } = job;
   return (
     <div className="w-full p-7 bg-slate-50 rounded-lg">
-      <div className="grid grid-cols-6 gap-6 items-center">
+      <div className="grid md:grid-cols-6 gap-6 items-center">
         <div className="col-span-2">
           <img src={logo} alt="" className="rounded" />
         </div>
@@ -32,7 +32,7 @@ const AppliedJobDetails = ({ job }) => {
               {job_type}
             </p>
           </div>
-          <div className="flex gap-6 items-center mt-6">
+          <div className="flex flex-col md:flex-row gap-6 md:items-center mt-6">
             <p className="flex items-center font-semibold text-xl text-[#757575] gap-2">
               <CiLocationOn></CiLocationOn> {location}
             </p>

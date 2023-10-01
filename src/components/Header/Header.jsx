@@ -30,7 +30,7 @@ const Header = () => {
   const img = (
     <>
       <NavLink to="/">
-        <img className="" src="assets/logo/CareerHub.png" />
+        <img className="" src="../../../public/assets/logo/CareerHub.png" />
       </NavLink>
     </>
   );
@@ -98,7 +98,7 @@ const Header = () => {
             <>
               <Link
                 to="/login"
-                className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
+                className="px-2 md:px-7 py-2 md:py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
                 id="special-btn"
               >
                 Star Applying

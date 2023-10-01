@@ -22,10 +22,10 @@ const JobDetails = () => {
           Job Details of: {job.job_title}
         </h3>
       </div>
-      <div className="grid gap-6 md:grid-cols-5 my-20 place-items-center mx-auto">
-        <div className="md:col-span-3">
+      <div className="grid gap-6 lg:grid-cols-5 my-20 place-items-center mx-auto">
+        <div className="lg:col-span-3 px-5 lg:px-0">
           <p className="text-lg font-bold">
-            Job Description:{" "}
+            Job Description:
             <span className="font-medium text-[#757575]">
               {job.job_description}
             </span>
@@ -47,17 +47,17 @@ const JobDetails = () => {
             <p>{job.experiences}</p>
           </div>
         </div>
-        <div className="col-span-2 ">
+        <div className="lg:col-span-2 px-5 md:px-0">
           <div className="bg-gradient-to-b from-[rgba(126,144,254,0.10)] to-[rgba(152,115,255,0.10)] rounded-lg p-8">
-            <h2 className="text-lg font-extrabold">Job Details</h2>
+            <h2 className="text-xl font-extrabold">Job Details</h2>
             <hr className="my-4" />
             <div>
               <p className="flex items-center gap-2 text-xl text-[#757575]">
-                <AiOutlineDollar className="text-[#9873FF] text-2xl"></AiOutlineDollar>{" "}
+                <AiOutlineDollar className="text-[#9873FF] text-lg md:text-2xl"></AiOutlineDollar>{" "}
                 <span className="font-bold text-black">Salary:</span>{" "}
                 {job.salary}
               </p>
-              <p className="flex items-center gap-2 mt-4 text-xl text-[#757575]">
+              <p className="flex items-center gap-2 mt-4 text-lg md:text-xl text-[#757575]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -86,25 +86,25 @@ const JobDetails = () => {
                     </linearGradient>
                   </defs>
                 </svg>{" "}
-                <span className="font-bold text-black">Job Title:</span>{" "}
+                <span className="font-bold text-black">Job Title:</span>
                 {job.job_title}
               </p>
             </div>
             <div className="mt-8">
-              <h2 className="text-lg font-extrabold">Contact Information</h2>
+              <h2 className="text-xl font-extrabold">Contact Information</h2>
               <hr className="my-6" />
-              <p className="flex items-center gap-2 text-xl text-[#757575]">
-                <HiOutlinePhone className="text-[#9873FF] text-2xl"></HiOutlinePhone>{" "}
+              <p className="flex items-center gap-2 text-lg md:text-xl text-[#757575]">
+                <HiOutlinePhone className="text-[#9873FF] text-xl md:text-2xl"></HiOutlinePhone>{" "}
                 <span className="font-bold text-black">Phone:</span>{" "}
                 {job.contact_information.phone}
               </p>
-              <p className="flex items-center gap-2 text-xl mt-4 text-[#757575]">
-                <AiOutlineMail className="text-[#9873FF] text-2xl"></AiOutlineMail>
+              <p className="flex items-center gap-2 text-lg md:text-xl mt-4 text-[#757575]">
+                <AiOutlineMail className="text-[#9873FF] text-lg md:text-2xl"></AiOutlineMail>
                 <span className="font-bold text-black">Email:</span>
                 {job.contact_information.email}
               </p>
               <p className="flex items-center gap-2 text-xl mt-4 text-[#757575]">
-                <CiLocationOn className="text-[#9873FF] text-2xl"></CiLocationOn>
+                <CiLocationOn className="text-[#9873FF] text-lg md:text-2xl"></CiLocationOn>
                 <span className="font-bold text-black">Adderess:</span>
                 {job.contact_information.address}
               </p>

@@ -18,7 +18,7 @@ const SocialLogin = () => {
       <div className="divider"> Continue With</div>
       <button
         onClick={() => handleSign(googleSign)}
-        className="flex items-center justify-around text-2xl bg-gray-800 text-white font-semibold px-4 py-3 rounded-md w-full"
+        className="flex items-center justify-around text-lg md:text-2xl bg-gray-800 text-white font-semibold px-4 py-3 rounded-md w-full"
       >
         <FcGoogle></FcGoogle> Sign In With Google
       </button>

@@ -17,11 +17,11 @@ const Job = ({ job }) => {
   } = job;
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card p-10 bg-base-100 shadow-xl border border-[#7E90FE] lg:border-none">
         <figure>
-          <img src={logo} alt="jobs" className="w-fit md:w-80" />
+          <img src={logo} alt="jobs" className="w-4/6 md:w-80" />
         </figure>
-        <div className="p-10">
+        <div className="mt-3">
           <h2 className="card-title">{job_title}</h2>
           <p className="text-xl font-semibold mt-2 text-[#757575]">
             {company_name}
@@ -34,7 +34,7 @@ const Job = ({ job }) => {
               {job_type}
             </p>
           </div>
-          <div className="flex gap-3 mt-4">
+          <div className="flex flex-col md:flex-row gap-3 mt-4">
             <p className="flex items-center gap-2 text-xl font-semibold text-[#757575] ">
               <CiLocationOn></CiLocationOn> {location}
             </p>
