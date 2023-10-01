@@ -21,18 +21,24 @@ const Job = ({ job }) => {
         <figure>
           <img src={logo} alt="Shoes" />
         </figure>
-        <div className="card-body">
+        <div className="p-10">
           <h2 className="card-title">{job_title}</h2>
-          <p>{company_name}</p>
-          <div className="card-actions justify-start">
-            <div className="badge badge-outline">{remote_or_onsite}</div>
-            <div className="badge badge-outline">{job_type}</div>
+          <p className="text-xl font-semibold mt-2 text-[#757575]">
+            {company_name}
+          </p>
+          <div className="flex gap-4 mt-4 justify-start">
+            <p className="text-base text-[#7E90FE] px-5 py-2  border-2 border-[#7E90FE] rounded-md font-extrabold ">
+              {remote_or_onsite}
+            </p>
+            <p className="text-base text-[#7E90FE] px-5 py-2  border-2 border-[#7E90FE] rounded-md font-extrabold ">
+              {job_type}
+            </p>
           </div>
-          <div className="flex gap-3">
-            <p className="flex items-center">
+          <div className="flex gap-3 mt-4">
+            <p className="flex items-center gap-2 text-xl font-semibold text-[#757575] ">
               <CiLocationOn></CiLocationOn> {location}
             </p>
-            <p className="flex items-center">
+            <p className="flex items-center gap-2 text-xl font-semibold text-[#757575]">
               <HiOutlineCurrencyDollar></HiOutlineCurrencyDollar>Salary:{" "}
               {salary}
             </p>

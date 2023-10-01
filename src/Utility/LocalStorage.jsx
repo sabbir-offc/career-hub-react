@@ -1,4 +1,5 @@
-import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+
 const getStoredJobApplication = (job) => {
   const { id } = job;
   const storedJobApplication = [];
@@ -9,6 +10,7 @@ const getStoredJobApplication = (job) => {
       "job-applications",
       JSON.stringify(storedJobApplication)
     );
+    return toast.success("You Applied Job Successfully.");
   } else {
     const isExists = Applications.find((job) => job.id === id);
     if (!isExists) {
@@ -17,10 +19,11 @@ const getStoredJobApplication = (job) => {
         "job-applications",
         JSON.stringify(storedJobApplication)
       );
+      return toast.success("You Applied Job Successfully.");
     } else {
-      alert("already added.");
+      toast.error("You have already applied this job.");
     }
   }
 };
 
-export { getStoredJobApplication };
+export default getStoredJobApplication;

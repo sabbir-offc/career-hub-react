@@ -4,7 +4,8 @@ import { AiOutlineDollar, AiOutlineMail } from "react-icons/ai";
 import { HiOutlinePhone } from "react-icons/hi2";
 import { CiLocationOn } from "react-icons/ci";
 import "react-toastify/dist/ReactToastify.css";
-import { getStoredJobApplication } from "../../Utility/LocalStorage";
+import getStoredJobApplication from "../../Utility/LocalStorage";
+
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();

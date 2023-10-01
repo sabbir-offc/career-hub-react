@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "/src/index.css";
+import { Toaster } from "react-hot-toast";
 
 const Root = () => {
   return (
@@ -11,6 +12,7 @@ const Root = () => {
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
+      <Toaster />
     </div>
   );
 };

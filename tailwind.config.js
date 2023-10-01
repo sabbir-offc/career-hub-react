@@ -11,6 +11,7 @@ export default {
     extend: {
       backgroundImage: {
         'jobs-bg': "url('/public/assets/images/bg2.png')",
+        'applied-jobs-bg': "url('/public/assets/images/bg1.png')"
       }
     }
 
