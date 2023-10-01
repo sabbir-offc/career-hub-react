@@ -19,7 +19,7 @@ const Job = ({ job }) => {
     <div>
       <div className="card bg-base-100 shadow-xl">
         <figure>
-          <img src={logo} alt="Shoes" />
+          <img src={logo} alt="jobs" className="w-fit md:w-80" />
         </figure>
         <div className="p-10">
           <h2 className="card-title">{job_title}</h2>

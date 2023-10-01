@@ -68,14 +68,32 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
         </div>
         <div className="navbar-end">
-          {user ? (
-            <button
-              onClick={handleLogOut}
-              className="px-7 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-white font-bold text-xl"
-              id="special-btn"
-            >
-              Sign Out
-            </button>
+          {user?.email ? (
+            <>
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user.photoURL} />
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <p>{user.displayName}</p>
+                  </li>
+                  <li>
+                    <button
+                      className="bg-neutral-800 text-white"
+                      onClick={handleLogOut}
+                    >
+                      Sign Out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </>
           ) : (
             <>
               <Link

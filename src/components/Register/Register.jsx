@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -7,24 +7,29 @@ import { auth } from "../../config/firebase.config";
 
 const Register = () => {
   const { createUser } = useAuth();
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
-    const image = e.target.image.value;
+    const image = e.target.image.src;
     const password = e.target.password.value;
 
     if (password.length < 6) {
       return toast.error("Password should be greater than 6 characters.");
     }
     createUser(email, password)
+      // eslint-disable-next-line no-unused-vars
       .then((res) => {
+        toast.success("Registration Successfull.");
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: image,
         });
+        navigate("/");
       })
       .catch((err) => {
+        toast.error("Registration Failed.");
         console.log(err);
       });
   };
