@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Category = ({ category }) => {
   const { logo, category_name, availability } = category;
   return (
@@ -9,4 +10,7 @@ const Category = ({ category }) => {
   );
 };
 
+Category.propTypes = {
+  category: PropTypes.object,
+};
 export default Category;

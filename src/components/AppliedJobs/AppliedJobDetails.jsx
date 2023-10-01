@@ -1,5 +1,8 @@
 import { AiOutlineDollar } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
+
+import PropTypes from "prop-types";
+
 const AppliedJobDetails = ({ job }) => {
   const {
     logo,
@@ -42,5 +45,7 @@ const AppliedJobDetails = ({ job }) => {
     </div>
   );
 };
-
+AppliedJobDetails.propTypes = {
+  job: PropTypes.object,
+};
 export default AppliedJobDetails;
