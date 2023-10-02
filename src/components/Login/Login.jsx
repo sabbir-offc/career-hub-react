@@ -15,6 +15,7 @@ const Login = () => {
     loginUser(email, password)
       .then(() => {
         toast.success("Login Successfull.");
+        e.target.reset();
         navigate("/");
       })
       .catch(() => {

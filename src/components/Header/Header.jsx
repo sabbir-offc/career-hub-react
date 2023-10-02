@@ -83,10 +83,10 @@ const Header = () => {
                 </label>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  className="menu menu-sm dropdown-content mt-3 z-[1] space-y-3 p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li>
-                    <p>{user.displayName}</p>
+                    <Link to="/profile">{user.displayName}</Link>
                   </li>
                   <li>
                     <button

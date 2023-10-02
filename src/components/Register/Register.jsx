@@ -20,10 +20,13 @@ const Register = () => {
       // eslint-disable-next-line no-unused-vars
       .then((res) => {
         profileUpdate(name, image)
-          .then()
+          .then(() => {
+            e.target.reset();
+          })
           .catch(() => {
-            toast.error("Profile update successfull.");
+            toast.error("Profile update Failed.");
           });
+
         toast.success("Registration Successfull.");
         navigate("/");
       })
