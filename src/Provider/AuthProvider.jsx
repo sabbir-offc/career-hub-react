@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../config/firebase.config";
 export const AuthContext = createContext(null);
@@ -39,6 +40,12 @@ const AuthProvider = ({ children }) => {
   const forgotPass = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
+  const profileUpdate = (name, image) => {
+    return updateProfile(user, {
+      displayName: name,
+      photoURL: image,
+    });
+  };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
@@ -57,6 +64,7 @@ const AuthProvider = ({ children }) => {
     loading,
     loginUser,
     forgotPass,
+    profileUpdate,
   };
 
   return (

@@ -2,17 +2,15 @@ import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-import { updateProfile } from "firebase/auth";
-import { auth } from "../../config/firebase.config";
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const { createUser, profileUpdate } = useAuth();
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
-    const image = e.target.image.src;
+    const image = e.target.image.value;
     const password = e.target.password.value;
 
     if (password.length < 6) {
@@ -21,20 +19,11 @@ const Register = () => {
     createUser(email, password)
       // eslint-disable-next-line no-unused-vars
       .then((res) => {
-        // Create and append an <img> element to display the image
-        const imgElement = document.createElement("img");
-        imgElement.src = image;
-        imgElement.alt = "User Profile Image";
-
-        // Append the <img> element to your website's DOM
-        const imageContainer = document.getElementById("image-container"); // Replace "image-container" with the actual ID or selector of the element where you want to display the image.
-        if (imageContainer) {
-          imageContainer.appendChild(imgElement);
-        }
-        updateProfile(auth.currentUser, {
-          displayName: name,
-          photoURL: image,
-        });
+        profileUpdate(name, image)
+          .then()
+          .catch(() => {
+            toast.error("Profile update successfull.");
+          });
         toast.success("Registration Successfull.");
         navigate("/");
       })

@@ -25,6 +25,11 @@ const Header = () => {
       <li>
         <NavLink to="/blogs">Blog</NavLink>
       </li>
+      {user?.email && (
+        <li>
+          <NavLink to="/profile">Profile</NavLink>
+        </li>
+      )}
     </>
   );
   const img = (
